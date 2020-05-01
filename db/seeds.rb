@@ -45,7 +45,7 @@ cities = [
 # Create Dogsitters, with their cities
 dogsitters = []
 125.times do
-    doctor = Dogsitter.create(
+    dogsitter = Dogsitter.create(
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
         city_id: cities[rand(0..24)].id
@@ -56,7 +56,7 @@ end
 # Create Dogs, with their cities
 dogs = []
 300.times do
-    patient = Dog.create(
+    dog = Dog.create(
         name: Faker::Creature::Dog.name,
         breed: Faker::Creature::Dog.breed,
         city_id: cities[rand(0..24)].id
@@ -68,7 +68,7 @@ end
 500.times do
     Stroll.create(
         date: Faker::Date.forward(days: 90),
-        dogsitter_id: dogsitters[rand(0..24)].id,
-        dog_id: dogs[rand(0..199)].id
+        dogsitter_id: dogsitters[rand(0..124)].id,
+        dog_id: dogs[rand(0..299)].id
     )
 end
